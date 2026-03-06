@@ -2,7 +2,7 @@
 
 Arduino and ESP32 library for the **TI BQ25619** I2C-controlled 1-cell 1.5A buck battery charger.
 
-Based on TI datasheet **SLUSDF8 â€“ June 2019**.
+Based on TI datasheet **SLUSDF8 – June 2019**.
 
 ---
 
@@ -20,7 +20,7 @@ your_project/
       library.properties
 ```
 
-No `lib_deps` entry needed â€” PlatformIO auto-discovers libraries in `lib/`.
+No `lib_deps` entry needed — PlatformIO auto-discovers libraries in `lib/`.
 
 ---
 
@@ -34,7 +34,7 @@ BQ25619 charger(0x6A); // 0x6A = ADDR pin to GND, 0x6B = ADDR pin to VCC
 
 void setup() {
     // ESP32: configure custom SDA/SCL pins before calling begin().
-    // Wire.begin(SDA, SCL) must be called first â€” the library does not
+    // Wire.begin(SDA, SCL) must be called first — the library does not
     // call it internally so you retain full control over pin assignment.
     Wire.begin(21, 22); // SDA=21, SCL=22
     charger.begin(&Wire);
@@ -42,7 +42,7 @@ void setup() {
     charger.setChargeCurrent(325);       // mA
     charger.setPrechargeCurrent(65);     // mA
     charger.setTerminationCurrent(32);   // mA
-    charger.setChargeVoltage(4200);      // mV â€” DO NOT exceed 4200 for LiPo
+    charger.setChargeVoltage(4200);      // mV — DO NOT exceed 4200 for LiPo
     charger.setInputVoltageLimit(4500);  // mV
     charger.setThermalThreshold(TREG_100C);
     charger.setWatchdogTimer(WATCHDOG_DISABLED);
