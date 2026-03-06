@@ -65,25 +65,25 @@ void setup() {
 ### Configuration
 | Method | Parameters | Description |
 |--------|-----------|-------------|
-| `setInputCurrentLimit(mA)` | 100â€“3200 | Input current limit (IINDPM), 100mA steps |
-| `setChargeCurrent(mA)` | 0â€“1500 | Fast charge current (ICHG), 25mA steps |
-| `setPrechargeCurrent(mA)` | 25â€“400 | Precharge current (IPRECHG), 25mA steps |
-| `setTerminationCurrent(mA)` | 5â€“80 | Charge termination current (ITERM), 5mA steps |
-| `setChargeVoltage(mV)` | 3856â€“4608 | Charge regulation voltage (VREG), 10mV steps |
-| `setInputVoltageLimit(mV)` | 3900â€“5400 | VINDPM threshold, 100mV steps |
+| `setInputCurrentLimit(mA)` | 100–3200 | Input current limit (IINDPM), 100mA steps |
+| `setChargeCurrent(mA)` | 0–1500 | Fast charge current (ICHG), 25mA steps |
+| `setPrechargeCurrent(mA)` | 25–400 | Precharge current (IPRECHG), 25mA steps |
+| `setTerminationCurrent(mA)` | 5–80 | Charge termination current (ITERM), 5mA steps |
+| `setChargeVoltage(mV)` | 3856–4608 | Charge regulation voltage (VREG), 10mV steps |
+| `setInputVoltageLimit(mV)` | 3900–5400 | VINDPM threshold, 100mV steps |
 | `setThermalThreshold(t)` | enum | TREG_60C / 80C / 100C / 120C |
 | `setWatchdogTimer(t)` | enum | WATCHDOG_DISABLED / 40S / 80S / 160S |
 | `setSafetyTimer(enable, duration)` | bool + enum | SAFETY_TIMER_5H / 8H / 12H / 20H |
-| `enableCharging(bool)` | â€” | Enable or disable charging |
-| `enableTermination(bool)` | â€” | Enable termination detection |
-| `enableStatPin(bool)` | â€” | Enable STAT LED output |
-| `resetRegisters()` | â€” | Reset all registers to datasheet defaults |
+| `enableCharging(bool)` | — | Enable or disable charging |
+| `enableTermination(bool)` | — | Enable termination detection |
+| `enableStatPin(bool)` | — | Enable STAT LED output |
+| `resetRegisters()` | — | Reset all registers to datasheet defaults |
 
 ### Status
 | Method | Returns | Description |
 |--------|---------|-------------|
 | `getStatus()` | `BQ25619_Status` | Full status struct (charge state, VBUS, PG, etc.) |
-| `getFaults()` | `BQ25619_Faults` | Fault struct â€” **clears fault register on read** |
+| `getFaults()` | `BQ25619_Faults` | Fault struct — **clears fault register on read** |
 | `isCharging()` | bool | True if pre-charge or fast-charging |
 | `isChargeComplete()` | bool | True if charge complete |
 | `isPowerGood()` | bool | True if valid input present |
